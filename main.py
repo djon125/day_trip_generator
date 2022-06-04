@@ -152,6 +152,7 @@ entertainment_fin = final_entertainment_picker(random_entertainment)
 print(f'You will start your trip to {location_fin} where you will get there by {transport_fin}, eat a delicious {restaurant_fin} meal and enjoy entertainment at {entertainment_fin}! Have fun!')
 
 
+#(5 points): As a developer, I want to make at least three commits with descriptive messages.
 
 # (5 points): As a developer, I want to store my destinations, restaurants, mode of transportations, and entertainments in their own separate lists.
 
