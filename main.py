@@ -1,7 +1,7 @@
 location_for_trip = ['Miami', 'London', 'Las Vegas', 'Prague', 'Paris', 'San Diego', 'Sydney', 'Seattle', 'Munich', 'San Francisco']
-mode_of_transportation = ['Train', 'Metro', 'Car', 'Bus', 'Uber', 'Bike']
-restaurant_list = ['American Style', 'Tapas Style', 'Spanish Style', 'Mexican Style', 'Middle Eastern Style', 'Pub Style'] 
-form_of_entertainment = ['Concert', 'Play', 'Museum', 'Art Gallery', 'Bar', 'Park']
+mode_of_transportation = ['Train', 'Metro', 'Car', 'Bus', 'Uber', 'Bike', 'Plane']
+restaurant_list = ['American Style', 'Tapas Style', 'Spanish Style', 'Mexican Style', 'Middle Eastern Style', 'Pub Style', 'German Style', 'Indian Style', 'Mediterranean style', 'French Style'] 
+form_of_entertainment = ['Concert', 'Play', 'Museum', 'Art Gallery', 'Bar', 'Park', 'Movie', 'Festival', 'Club', 'Sporting Event']
 
 import random as ran
 #random choice list generated using import random
@@ -13,8 +13,9 @@ random_restaurant = ran.choice(restaurant_list)
 def location_picker(random_location):
     location = ran.choice(location_for_trip)
     finalized = True
+    print('Let\'s plan your trip!  Do you want to go to:')
     while finalized:
-        location_select = input(f'Let\'s plan your trip! Do you want to go to {location}? y/n: ')
+        location_select = input(f'{location}? y/n: ')
         if location_select == 'n' or location_select =='no':
             location = ran.choice(location_for_trip)
             print('No worries, how about:')
@@ -28,8 +29,9 @@ def location_picker(random_location):
 def restaurant_picker(random_restaurant):
     restaurant = ran.choice(restaurant_list)
     finalized = True
+    print(f'Next, what sytle of restaurant do you want:')
     while finalized:
-        restaurant_select = input(f'Next, what style of restaurant do you want? {restaurant}? y/n: ')
+        restaurant_select = input(f'{restaurant}? y/n: ')
         if restaurant_select == 'n' or restaurant_select == 'no':
             restaurant = ran.choice(restaurant_list)
             print('No worries, how about:')
@@ -43,8 +45,9 @@ def restaurant_picker(random_restaurant):
 def transport_picker(random_transport):
     transport = ran.choice(mode_of_transportation)
     finalized = True
+    print('Now, what form of transportation do you want to use:')
     while finalized:
-        transport_select = input(f'Now, what form of transportation do you want to use? {transport}? y/n: ')
+        transport_select = input(f'{transport}? y/n: ')
         if transport_select == 'n' or transport_select == 'no':
             transport = ran.choice(mode_of_transportation)
             print(f'No worries, how about:')
@@ -58,8 +61,9 @@ def transport_picker(random_transport):
 def entertainment_picker(random_entertainment):
     entertainment = ran.choice(form_of_entertainment)
     finalized = True
+    print('Finally, what form of entertainment do you want:')
     while finalized:  
-        entertainment_select = input(f'Finally, what form of entertainment do you want? {entertainment} y/n: ') 
+        entertainment_select = input(f'{entertainment}? y/n: ') 
         if entertainment_select == 'n' or entertainment_select == 'no':
             entertainment = ran.choice(form_of_entertainment)
             print(f'No worries, try this:')
@@ -72,8 +76,9 @@ def entertainment_picker(random_entertainment):
 def final_location_picker(random_location):
     location = confirmed_location
     finalized = True
+    print('Would you like to confirm your selected location:')
     while finalized:
-        location_select = input(f'Would you like to confirm your selecected location: {location} y/n: ')
+        location_select = input(f'{location} y/n: ')
         if location_select == 'n' or location_select =='no':
             location = ran.choice(location_for_trip)
             print('No worries, pick again:')
@@ -87,8 +92,9 @@ def final_location_picker(random_location):
 def final_restaurant_picker(random_restaurant):
     restaurant = confirmed_restaurant
     finalized = True
+    print('Would you like to confirm the restaurant style:')
     while finalized:
-        restaurant_select = input(f'Would you like to confirm the restaurant style: {restaurant} y/n: ')
+        restaurant_select = input(f'{restaurant} y/n: ')
         if restaurant_select == 'n' or restaurant_select == 'no':
             restaurant = ran.choice(restaurant_list)
             print('No worries, pick again:')
@@ -102,8 +108,9 @@ def final_restaurant_picker(random_restaurant):
 def final_transport_picker(random_transport):
     transport = confirmed_transportation
     finalized = True
+    print('Would you like to confirm your transportation method:')
     while finalized:
-        transport_select = input(f'Would you like to confirm your transportation method: {transport} y/n: ')
+        transport_select = input(f'{transport} y/n: ')
         if transport_select == 'n' or transport_select == 'no':
             transport = ran.choice(mode_of_transportation)
             print(f'No worries pick again:')
@@ -117,14 +124,15 @@ def final_transport_picker(random_transport):
 def final_entertainment_picker(random_entertainment):
     entertainment = confirmed_entertainment
     finalized = True
+    print('Would you like to confirm your entertainment:')
     while finalized:  
-        entertainment_select = input(f'Would you like to confirm your entertainment: {entertainment} y/n: ') 
+        entertainment_select = input(f'{entertainment} y/n: ') 
         if entertainment_select == 'n' or entertainment_select == 'no':
             entertainment = ran.choice(form_of_entertainment)
             print(f'No worries, pick again:')
             continue
         elif entertainment_select == 'y' or entertainment_select == 'yes':
-            print('Great! Thanks for confirming! Let\'s see what you chose:')
+            print('Great! Thanks for confirming! Let\'s see the trip you chose:')
             return entertainment 
         else:
             print('that is not a valid response, try again ')
@@ -141,9 +149,9 @@ restaurant_fin = final_restaurant_picker(random_restaurant)
 transport_fin = final_transport_picker(random_transport)
 entertainment_fin = final_entertainment_picker(random_entertainment)
 # I put all 4 funciton calls down here and build a big print statment to display the entire trip to the user!
-print(f'You will enjoy a trip to {location_fin} where you will love a {restaurant_fin} meal, get there by {transport_fin} and be entertained by {entertainment_fin}! Have fun!')
+print(f'You will start your trip to {location_fin} where you will get there by {transport_fin}, eat a delicious {restaurant_fin} meal and enjoy entertainment at {entertainment_fin}! Have fun!')
 
-# (5 points): As a developer, I want to make at least three commits with descriptive messages.
+
 
 # (5 points): As a developer, I want to store my destinations, restaurants, mode of transportations, and entertainments in their own separate lists.
 
